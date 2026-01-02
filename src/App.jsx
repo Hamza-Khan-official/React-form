@@ -16,55 +16,66 @@ function App() {
 
   const [SignUP, setSingUP] = useState(true);
 
-  function Update_form(){
+  function Update_form() {
     setSingUP(!SignUP)
   }
 
   return (
     <>
-    <h1 style={{color:"White"}}>Welcome to form</h1>
-    {
-      SignUP ? <>
-        <div>
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Email address"
-            className="mb-3"
-          >
-            <Form.Control type="email" placeholder="name@example.com" />
-          </FloatingLabel>
-          <FloatingLabel controlId="floatingPassword" label="Password">
-            <Form.Control type="password" placeholder="Password" />
-          </FloatingLabel>
-          <br /><br />
-        </div>
-      </> :
-        <>
+      <h1 style={{ color: "White" }}>Welcome to form</h1>
+      {
+        SignUP ? <>
           <div>
-            <Form>
-              <Row>
-                <Col>
-                  <Form.Control placeholder="First name" />
-                </Col>
-                <Col>
-                  <Form.Control placeholder="Last name" />
-                </Col>
-              </Row>
+            <FloatingLabel
+              controlId="floatingInput"
+              label="Email address"
+              className="mb-3"
+            >
+              <Form.Control type="email" placeholder="name@example.com" />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingPassword" label="Password">
+              <Form.Control type="password" placeholder="Password" />
+            </FloatingLabel>
+            <br /><br />
 
-              <Form.Group className="mb-3" controlId="formGroupEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formGroupPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-            </Form>
+            <div style={{ display: 'flex', gap: 20, justifyContent: 'center' }}>
+              <Button variant="primary">Login</Button>
+              <Button onClick={Update_form} variant="success">SignUP</Button>
+            </div>
+
             <br /><br />
           </div>
-        </>
-    }
-      <Button onClick={Update_form} variant="success"> {SignUP ? "Login" : "SIgnUP"}</Button>
+        </> :
+          <>
+            <div>
+              <Form>
+                <Row>
+                  <Col>
+                    <Form.Control required placeholder="First name" />
+                  </Col>
+                  <Col>
+                    <Form.Control placeholder="Last name" />
+                  </Col>
+                </Row>
+
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+              </Form>
+              <div>
+                <Button onClick={Update_form} variant="success">SignUP</Button>
+              </div>
+              <br /><br />
+            </div>
+          </>
+      }
+      {/* <Button onClick={Update_form} variant="success"> {SignUP ? "Login" : "SIgnUP"}</Button> */}
+      {/* <Button onClick={Update_form} variant="success">SignUP</Button> */}
 
     </>
   )
