@@ -64,7 +64,7 @@ function App() {
           </div>
         </>
     }
-      <Button onClick={Update_form} variant="primary"> {SignUP ? "Login" : "SIgnUP"}</Button>
+      <Button onClick={Update_form} variant="success"> {SignUP ? "Login" : "SIgnUP"}</Button>
 
     </>
   )
